@@ -10,10 +10,11 @@
 
  <dependencies>
   <dependency>
-   <groupId>com.sun.jndi</groupId>
+   <groupId>com.sun.messaging.mq</groupId>
    <artifactId>fscontext</artifactId>
-   <version>1.2-beta-3</version>
+   <version>4.6-b01</version>
   </dependency>
+
 
   <dependency>
    <groupId>junit</groupId>
@@ -21,15 +22,7 @@
    <version>4.12</version>
    <scope>test</scope>
   </dependency>
-
  </dependencies>
-
- <repositories>
-  <repository>
-   <id>mavenrepo</id>
-   <url>http://maven-repository.com/artifact/</url>
-  </repository>
- </repositories>
 
  <build>
   <plugins>

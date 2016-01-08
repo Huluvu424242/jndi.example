@@ -4,7 +4,11 @@ import java.util.Hashtable;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
+import javax.naming.NameClassPair;
+import javax.naming.NamingEnumeration;
 import javax.naming.NamingException;
+
+import com.sun.jndi.fscontext.RefFSContext;
 
 public class JNDIFileSystemService {
 
@@ -18,11 +22,17 @@ public class JNDIFileSystemService {
 
     public void run() {
         try {
-            final Context ctx = new InitialContext(env);
-            final Object obj = ctx.lookup("/");
-            System.out.println("/ is bound to: " + obj);
+            final Context initContext = new InitialContext(env);
+            final RefFSContext context = (RefFSContext) initContext.lookup("/");
+            System.out.println("/ is bound to: " + context);
+            final NamingEnumeration<NameClassPair> list = initContext.list("/");
+
+            while (list.hasMore()) {
+                NameClassPair nc = list.next();
+                System.out.println(nc);
+            }
+
         } catch (NamingException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
