@@ -1,5 +1,5 @@
 # jndi.example
-Beispiele zur Nutzung des JNDI Service
+Beispiele zur Nutzung des JNDI Service mittels File System Service Provider.
 
 [![Build Status](https://travis-ci.org/FunThomas424242/jndi.example.svg?branch=master)](https://travis-ci.org/FunThomas424242/jndi.example)
 
